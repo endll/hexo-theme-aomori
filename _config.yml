@@ -1,4 +1,4 @@
-version: 1618369575286
+version: 1618384881440
 language: cn
 aomori_widgets:
   - toc
@@ -6,3 +6,4 @@ aomori_widgets:
   - tag
   - recent_posts
   - archive
+share: false

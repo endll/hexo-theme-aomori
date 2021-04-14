@@ -73,6 +73,7 @@
 
     <%- partial('post/nav') %>
 
+		<% if (theme.share) { %>
     <section class="share">
         <div class="share-title"><%= __('share') %></div>
         <a class="share-item" target="_blank"
@@ -88,6 +89,7 @@
             <div class="n-icon n-icon-weibo"></div>
         </a> -->
     </section>
+		<% } %>
 
 </article>
 

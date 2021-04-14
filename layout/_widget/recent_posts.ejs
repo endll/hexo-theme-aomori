@@ -1,6 +1,6 @@
 <% if (site.posts.length){ %>
   <div class="widget-wrap widget-recent-posts">
-    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-title"><span><%= __('Recent Posts') %></span></div>
     <div class="widget-inner">
       <ul>
         <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
