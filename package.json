@@ -11,7 +11,8 @@
     "release": "standard-version"
   },
   "dependencies": {
-    "boxicons": "^2.0.7"
+    "boxicons": "^2.0.7",
+    "valine": "^1.4.14"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",

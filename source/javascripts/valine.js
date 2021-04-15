@@ -4,6 +4,7 @@
             el: '#valine-container',
             appId: window.aomori.valine.appId,
             appKey: window.aomori.valine.appKey,
+            avatar: 'hide',
         })
     }
 })()

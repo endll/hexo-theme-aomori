@@ -39,15 +39,6 @@ import { addNewClass, removeClass, throttle } from './class-module'
         contentSelector: '.post-inner-html',
         headingSelector: 'h1, h2, h3',
         hasInnerContainers: true,
-        // tocSelector: '.post-toc-html',
-        // contentSelector: '.post-inner-html',
-        // linkClass: 'tocbot-link',
-        // activeLinkClass: 'is-active-li',
-        // listClass: 'tocbot-list',
-        // isCollapsedClass: 'tocbot-is-collapsed',
-        // collapsibleClass: 'tocbot-is-collapsible',
-        // scrollSmooth: true,
-        //headingsOffset: -boardTop
     })
     // NProgress
     var totalH =
