@@ -23,8 +23,8 @@
         </div>
         <div class="header-menu">
             <div class="header-menu-inner">
-                <% for (var i in config.aomori_menu){ %>
-                <a href="<%- url_for(config.aomori_menu[i]) %>"><%= i %></a>
+                <% for (var i in theme.aomori_menu){ %>
+                <a href="<%- url_for(theme.aomori_menu[i]) %>"><%- i %></a>
                 <% } %>
             </div>
             <div class="header-menu-social">
@@ -47,7 +47,7 @@
                     <i class="icon icon-cross"></i>
                 </div>
                 <div class="header-menu-mobile-menu-list">
-                    <% for (var i in config.aomori_menu){ %>
+                    <% for (var i in theme.aomori_menu){ %>
                     <a href="<%- url_for(config.aomori_menu[i]) %>"><%= i %></a>
                     <% } %>
                 </div>

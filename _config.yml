@@ -1,9 +1,12 @@
-version: 1618384881440
+version: 1618455111579
 language: cn
 aomori_widgets:
   - toc
   - category
-  - tag
   - recent_posts
   - archive
+aomori_menu:
+  主&nbsp;&nbsp;&nbsp;&nbsp;页: /
+  文&nbsp;&nbsp;&nbsp;&nbsp;章: /archives
 share: false
+toc: true
