@@ -1,4 +1,3 @@
-
 .friends {
     margin-bottom: 60px;
 
@@ -23,5 +22,19 @@
             padding: 15px 20px;
             position: relative;
         }
+    }
+}
+
+.about {
+    margin-bottom: 60px;
+
+    .article {
+        background: var(--color-white-light);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 20px;
+        position: relative;
+
+        // .article-entry {}
     }
 }
