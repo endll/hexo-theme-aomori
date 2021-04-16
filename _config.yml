@@ -1,4 +1,4 @@
-version: 1618471461616
+version: 1618478518032
 language: cn
 aomori_widgets:
   - toc
@@ -10,9 +10,3 @@ aomori_menu:
   文&nbsp;&nbsp;&nbsp;章: /archives
   关&nbsp;&nbsp;&nbsp;于: /about
 share: false
-aomori_valine:
-  enable: true
-  appId: 
-  appKey: 
-
-

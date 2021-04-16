@@ -25,7 +25,7 @@
       <meta name="google-site-verification" content="<%= config.aomori_google_site.id %>" />
     <% } %>
 
-    <% if (config.aomori_search_algolia){ %>
+    <% if (theme.aomori_search_algolia){ %>
         <%- algolia_search_config() %>
     <% } %>
 
@@ -61,11 +61,11 @@
                 distractionFreeMode: <%= config.aomori_gitalk.distractionFreeMode %>  // Facebook-like distraction free mode
             },
             <% } %>
-            <% if (theme.aomori_valine){ %>
+            <% if (config.aomori_valine){ %>
             valine: {
-                enable: <%= theme.aomori_valine.enable || false %>,
-                appId: "<%= theme.aomori_valine.appId || '' %>",
-                appKey: "<%= theme.aomori_valine.appKey || '' %>",
+                enable: <%= config.aomori_valine.enable || false %>,
+                appId: "<%= config.aomori_valine.appId || '' %>",
+                appKey: "<%= config.aomori_valine.appKey || '' %>",
             },
             <% } %>
             <% if (config.aomori_disqusjs){ %>

@@ -344,3 +344,7 @@
 .post-inner-html sub {
 	bottom: -0.25em
 }
+
+#vat {
+	color:var(--color-white)
+}

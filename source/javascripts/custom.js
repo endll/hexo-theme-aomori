@@ -41,26 +41,26 @@ import { addNewClass, removeClass, throttle } from './class-module'
         hasInnerContainers: true,
     })
     // NProgress
-    var totalH =
-        document.body.scrollHeight || document.documentElement.scrollHeight // 页面总高
-    var clientH = window.innerHeight || document.documentElement.clientHeight // 可视高
-    window.addEventListener(
-        'scroll',
-        throttle(() => {
-            // 计算有效高
-            var validH = totalH - clientH
-            // 滚动条卷去高度
-            var scrollH =
-                document.body.scrollTop || document.documentElement.scrollTop
-            // 百分比
-            var result = scrollH / validH
-            NProgress.set(result)
-        })
-    )
-    NProgress.configure({
-        showSpinner: false,
-        minimum: 0,
-    })
+    // var totalH =
+    //     document.body.scrollHeight || document.documentElement.scrollHeight // 页面总高
+    // var clientH = window.innerHeight || document.documentElement.clientHeight // 可视高
+    // window.addEventListener(
+    //     'scroll',
+    //     throttle(() => {
+    //         // 计算有效高
+    //         var validH = totalH - clientH
+    //         // 滚动条卷去高度
+    //         var scrollH =
+    //             document.body.scrollTop || document.documentElement.scrollTop
+    //         // 百分比
+    //         var result = scrollH / validH
+    //         NProgress.set(result)
+    //     })
+    // )
+    // NProgress.configure({
+    //     showSpinner: false,
+    //     minimum: 0,
+    // })
 
     // Back to Top
     $('#backtop').click(function () {
