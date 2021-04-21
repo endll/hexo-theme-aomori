@@ -1,4 +1,6 @@
 import { addNewClass, removeClass, throttle } from './class-module'
+
+import './search'
 ;(function () {
     let toggles = document.querySelectorAll('.cases .item')
     toggles.forEach((toggle) => {
@@ -148,46 +150,50 @@ import { addNewClass, removeClass, throttle } from './class-module'
     if (window.aomori_search_algolia) {
         const _searchPs = document.querySelector('#search-ps')
         const searchPs = new PerfectScrollbar(_searchPs)
+        var algoliaConfig
+        if (document.querySelector('meta[property="algolia:search"]') != null) {
+            algoliaConfig = document.querySelector(
+                'meta[property="algolia:search"]'
+            ).dataset
 
-        const algoliaConfig = document.querySelector(
-            'meta[property="algolia:search"]'
-        ).dataset
+            const algoliaClient = algoliasearch(
+                algoliaConfig.applicationId,
+                algoliaConfig.apiKey
+            )
+            const algoliaIndex = algoliaClient.initIndex(
+                algoliaConfig.indexName
+            )
 
-        const algoliaClient = algoliasearch(
-            algoliaConfig.applicationId,
-            algoliaConfig.apiKey
-        )
-        const algoliaIndex = algoliaClient.initIndex(algoliaConfig.indexName)
+            $('#search').on(
+                'keyup',
+                throttle((event) => {
+                    algoliaIndex.search($('#search').val()).then(({ hits }) => {
+                        $('.search-result').slideDown()
 
-        $('#search').on(
-            'keyup',
-            throttle((event) => {
-                algoliaIndex.search($('#search').val()).then(({ hits }) => {
-                    $('.search-result').slideDown()
-
-                    if (hits.length) {
-                        let searchOutputHtml = ''
-                        hits.forEach((item) => {
-                            searchOutputHtml += `<a class="search-result-item" href="${
-                                item.permalink
-                            }"><h1>${item.title}</h1><p>${dayjs(
-                                item.date
-                            ).format('YYYY-MM-DD')}</p></a>`
-                        })
-                        $('.search-result').html(searchOutputHtml)
-                    } else {
-                        $('.search-result').html('Nothing at all.')
-                    }
+                        if (hits.length) {
+                            let searchOutputHtml = ''
+                            hits.forEach((item) => {
+                                searchOutputHtml += `<a class="search-result-item" href="${
+                                    item.permalink
+                                }"><h1>${item.title}</h1><p>${dayjs(
+                                    item.date
+                                ).format('YYYY-MM-DD')}</p></a>`
+                            })
+                            $('.search-result').html(searchOutputHtml)
+                        } else {
+                            $('.search-result').html('Nothing at all.')
+                        }
+                    })
                 })
+            )
+            $('#search').on('focusin', () => {
+                addNewClass($('.search'), 'search-focus')
             })
-        )
-        $('#search').on('focusin', () => {
-            addNewClass($('.search'), 'search-focus')
-        })
-        $('#search').on('focusout', () => {
-            removeClass($('.search'), 'search-focus')
-            $('.search-result').slideUp()
-        })
+            $('#search').on('focusout', () => {
+                removeClass($('.search'), 'search-focus')
+                $('.search-result').slideUp()
+            })
+        }
     }
 
     // Swiper

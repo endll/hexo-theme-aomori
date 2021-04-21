@@ -8,3 +8,8 @@ import './gitalk'
 
 // Valine
 import './valine'
+
+ search-plugin
+
+import './search'
+

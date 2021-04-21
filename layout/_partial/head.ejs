@@ -25,7 +25,7 @@
       <meta name="google-site-verification" content="<%= config.aomori_google_site.id %>" />
     <% } %>
 
-    <% if (theme.aomori_search_algolia){ %>
+    <% if (config.aomori_search_algolia){ %>
         <%- algolia_search_config() %>
     <% } %>
 

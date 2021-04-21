@@ -328,12 +328,11 @@ img:not([src]):not([srcset]) {
         }
 
         &-result {
-            display: none;
             width: 100%;
             max-height: calc(100vh - 190px);
             padding: 0 20px 15px;
             background: var(--color-white-light);
-            overflow-y: scroll;
+            overflow-y: hidden;
             
             &-item {
                 display: block;
@@ -1056,3 +1055,4 @@ img:not([src]):not([srcset]) {
 /* import */
 @import './page';
 @import './media-fixed';
+@import './search'

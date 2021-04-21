@@ -1,4 +1,4 @@
-version: 1618478518032
+version: 1619012813780
 language: cn
 aomori_widgets:
   - toc
@@ -10,3 +10,7 @@ aomori_menu:
   文&nbsp;&nbsp;&nbsp;章: /archives
   关&nbsp;&nbsp;&nbsp;于: /about
 share: false
+local_search:
+  enable: true
+  location: 'right: 50px;top: 30px;'
+  facade: ''
