@@ -1,4 +1,3 @@
-
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
@@ -6,7 +5,7 @@
 
 body {
     background-color: var(--color-bg);
-    font: 14px/1 PingFangSC,'Microsoft Yahei', Microsoft Sans Serif, sans-serif;
+    font: 14px/1 PingFangSC, 'Microsoft Yahei', Microsoft Sans Serif, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -114,7 +113,7 @@ img:not([src]):not([srcset]) {
         display: flex;
         flex: 1;
         justify-content: flex-end;
-        
+
         &-inner {
             line-height: 40px;
             margin-right: 5px;
@@ -131,7 +130,7 @@ img:not([src]):not([srcset]) {
             a:active {
                 letter-spacing: 1px;
             }
-            
+
             a::after,
             a::before {
                 backface-visibility: hidden;
@@ -144,7 +143,7 @@ img:not([src]):not([srcset]) {
                 transition: all 280ms ease-in-out;
                 width: 0;
             }
-            
+
             a:hover::after,
             a:hover::before {
                 backface-visibility: hidden;
@@ -152,13 +151,12 @@ img:not([src]):not([srcset]) {
                 transition: width 350ms ease-in-out;
                 width: 80%;
             }
-            
+
             a:hover::before {
                 bottom: auto;
                 top: 0;
                 width: 80%;
             }
-
         }
 
         &-social {
@@ -175,7 +173,6 @@ img:not([src]):not([srcset]) {
                 fill: var(--color-light);
             }
         }
-
     }
 
     .header-menu-mobile {
@@ -265,10 +262,10 @@ img:not([src]):not([srcset]) {
 .main {
     position: relative;
     margin-bottom: 150px;
-    
+
     .inner {
         padding-right: 300px;
-        
+
         .inner-main {
             position: relative;
             width: 100%;
@@ -297,7 +294,7 @@ img:not([src]):not([srcset]) {
         border-radius: 8px;
         overflow: hidden;
         z-index: 10;
-        transition: all .3s;
+        transition: all 0.3s;
 
         .form-input {
             height: 46px;
@@ -317,8 +314,8 @@ img:not([src]):not([srcset]) {
         }
 
         &-focus {
-            border: 2px solid rgba(var(--color-type), .2);
-            transition: all .3s;
+            border: 2px solid rgba(var(--color-type), 0.2);
+            transition: all 0.3s;
         }
 
         .form-icon {
@@ -330,26 +327,38 @@ img:not([src]):not([srcset]) {
         &-result {
             width: 100%;
             max-height: calc(100vh - 190px);
-            padding: 0 20px 15px;
+            padding: 0 10px;
             background: var(--color-white-light);
-            overflow-y: hidden;
-            
+            overflow-y: auto;
+
             &-item {
                 display: block;
-                padding: 10px 0;
-                border-top: 1px solid var(--color-white);
+                padding: 5px 0;
 
                 h1 {
                     margin: 0 0 5px;
-                    font-size: 14px;
+                    font-size: 16px;
                     font-weight: 400;
+                    border-bottom: 1px solid var(--color-white);
                 }
 
                 p {
                     margin: 0;
-                    font-size: 12px;
+                    font-size: 14px;
                     font-weight: 300;
                 }
+            }
+
+            &-empty {
+                margin: 5px;
+                font-size: 14px;
+                font-weight: 300;
+            }
+
+            &-keyword {
+                color: var(--color-light);
+                font-weight: bold;
+                text-decoration: underline;
             }
         }
     }
@@ -361,7 +370,7 @@ img:not([src]):not([srcset]) {
         margin-bottom: 20px;
         width: 100%;
         max-height: calc(100vh - 210px);
-        overflow-y: scroll;
+        overflow-y: auto;
         padding: 20px;
 
         .widget-wrap {
@@ -464,7 +473,6 @@ img:not([src]):not([srcset]) {
             }
         }
     }
-
 }
 
 .sidebar-search-fix {
@@ -574,7 +582,7 @@ img:not([src]):not([srcset]) {
                     right: 0;
                     top: 0;
                     transition: all 0.8s ease 0s;
-                    opacity: .16;
+                    opacity: 0.16;
                     z-index: 1;
                 }
 
@@ -620,7 +628,7 @@ img:not([src]):not([srcset]) {
             justify-content: flex-end;
             padding: 20px 0 0;
             // font-family: 'Oswald', sans-serif;
-            
+
             .article-more-info {
                 display: flex;
 
@@ -647,7 +655,6 @@ img:not([src]):not([srcset]) {
                     display: flex;
                     margin-left: 10px;
                     padding-left: 8px;
-
                 }
 
                 .article-tag-list {
@@ -670,7 +677,7 @@ img:not([src]):not([srcset]) {
             }
         }
 
-        // Video 
+        // Video
         .article-video {
             margin-bottom: 20px;
             border-radius: 5px;
@@ -692,7 +699,7 @@ img:not([src]):not([srcset]) {
                 position: absolute;
                 top: -5px;
                 width: 50px;
-                transition: all .3s;
+                transition: all 0.3s;
             }
 
             &-content {
@@ -740,7 +747,7 @@ img:not([src]):not([srcset]) {
 
         .article-gallery {
             z-index: 0 !important;
-            
+
             img {
                 width: 100%;
                 cursor: pointer;
@@ -752,7 +759,7 @@ img:not([src]):not([srcset]) {
             }
         }
 
-        // Video 
+        // Video
         .article-video {
             border-radius: 5px;
             overflow: hidden;
@@ -826,7 +833,7 @@ img:not([src]):not([srcset]) {
                     }
                 }
             }
-            
+
             .article-busuanzi,
             .article-counter {
                 align-items: center;
@@ -1055,4 +1062,3 @@ img:not([src]):not([srcset]) {
 /* import */
 @import './page';
 @import './media-fixed';
-@import './search'

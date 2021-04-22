@@ -16,13 +16,10 @@ var searchFunc = function (path, search_id, content_id) {
                 .get()
 
             var $input = document.getElementById(search_id)
-						console.log($input)
             var $resultContent = document.getElementById(content_id)
-						console.log($resultContent)
             $input.addEventListener('input', function () {
-							console.log("输出！！")
 							$('.search-result').slideDown()
-                var str = '<ul class="search-result-list">'
+                var str = ''
                 var keywords = this.value
                     .trim()
                     .toLowerCase()
@@ -66,12 +63,6 @@ var searchFunc = function (path, search_id, content_id) {
                         isMatch = false
                     }
                     if (isMatch) {
-                        str +=
-                            "<li><a href='" +
-                            data_url +
-                            "' class='search-result-title'>" +
-                            data_title +
-                            '</a>'
                         var content = data.content
                             .trim()
                             .replace(/<[^>]+>/g, '')
@@ -92,45 +83,53 @@ var searchFunc = function (path, search_id, content_id) {
                             }
 
                             var match_content = content.substr(start, end)
-
                             keywords.forEach(function (keyword) {
                                 var regS = new RegExp(keyword, 'gi')
                                 match_content = match_content.replace(
                                     regS,
-                                    '<em class="search-keyword">' +
+                                    '<span class="search-result-keyword">' +
                                         keyword +
-                                        '</em>'
+                                        '</span>'
+                                )
+                                data_title = data_title.replace(
+                                    regS,
+                                    '<span class="search-result-keyword">' +
+                                        keyword +
+                                        '</span>'
                                 )
                             })
-
-                            str +=
-                                '<p class="search-result">' +
-                                match_content +
-                                '...</p>'
+                            var title =
+                                "<span class='search-result-item'>" +
+                                "<h1><a href='" +
+                                data_url +
+                                "'>" +
+                                data_title +
+                                '</a></h1>'
+														var date = data_url.substr(0,10)
+                            str += title + '<p>' + match_content + '...</p>'+ '<p>' + date + '</p>'
                         }
-                        str += '</li>'
+                        str += '</span>'
                     }
                 })
-                str += '</ul>'
-                if (str.indexOf('<li>') === -1) {
+                if (str.indexOf('</a>') === -1) {
                     return ($resultContent.innerHTML =
-                        "<ul><span class='local-search-empty'>没有找到内容，更换下搜索词试试吧~<span></ul>")
+                        "<p class='search-result-empty'>没有找到内容，更换下搜索词试试吧~</p>")
                 }
                 $resultContent.innerHTML = str
             })
         },
     })
-    $(document).on('click', '#local-search-close', function () {
-        $('#local-search-input').val('')
-        $('#local-search-result').html('')
+    // $(document).on('click', '#local-search-close', function () {
+    //     $('#local-search-input').val('')
+    //     $('#local-search-result').html('')
+    // })
+    $('#search').on('focusin', () => {
+        addNewClass($('.search'), 'search-focus')
     })
-		$('#search').on('focusin', () => {
-			addNewClass($('.search'), 'search-focus')
-		})
-		// $('#search').on('focusout', () => {
-		// 		removeClass($('.search'), 'search-focus')
-		// 		$('.search-result').slideUp()
-		// })
+    // $('#search').on('focusout', () => {
+    // 		removeClass($('.search'), 'search-focus')
+    // 		$('.search-result').slideUp()
+    // })
 }
 
 searchFunc('/search.xml', 'search', 'search-ps')

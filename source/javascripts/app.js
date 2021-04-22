@@ -1,5 +1,3 @@
-import 'boxicons'
-
 // 入口文件
 import './custom'
 
@@ -7,9 +5,7 @@ import './custom'
 import './gitalk'
 
 // Valine
-import './valine'
-
- search-plugin
+//import './valine'
 
 import './search'
 

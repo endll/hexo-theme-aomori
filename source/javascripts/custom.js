@@ -1,6 +1,4 @@
 import { addNewClass, removeClass, throttle } from './class-module'
-
-import './search'
 ;(function () {
     let toggles = document.querySelectorAll('.cases .item')
     toggles.forEach((toggle) => {
@@ -135,7 +133,8 @@ import './search'
     const _widget = document.querySelector('#widget')
     const widget = new PerfectScrollbar(_widget)
 
-    // Typed
+		/* move to head.ejs
+    // Typed 
     if (window.aomori_logo_typed_animated) {
         const typed = new Typed('#typed', {
             stringsElement: '#typed-strings',
@@ -195,6 +194,20 @@ import './search'
             })
         }
     }
+		// DisqusJS
+    if (window.aomori.disqusjs && window.aomori.disqusjs.enable) {
+        const dsqjs = new DisqusJS({
+            shortname: window.aomori.disqusjs.shortname,
+            siteName: window.aomori.disqusjs.siteName,
+            api: window.aomori.disqusjs.api,
+            apikey: window.aomori.disqusjs.apikey,
+            nesting: window.aomori.disqusjs.nesting,
+            nocomment: window.aomori.disqusjs.nocomment,
+            admin: window.aomori.disqusjs.admin,
+            adminLabel: window.aomori.disqusjs.adminLabel,
+        })
+    }
+		*/
 
     // Swiper
     const mySwiper = new Swiper('.swiper-container', {
@@ -245,17 +258,5 @@ import './search'
     // LazyLoad
     const lazyLoad = new LazyLoad()
 
-    // DisqusJS
-    if (window.aomori.disqusjs && window.aomori.disqusjs.enable) {
-        const dsqjs = new DisqusJS({
-            shortname: window.aomori.disqusjs.shortname,
-            siteName: window.aomori.disqusjs.siteName,
-            api: window.aomori.disqusjs.api,
-            apikey: window.aomori.disqusjs.apikey,
-            nesting: window.aomori.disqusjs.nesting,
-            nocomment: window.aomori.disqusjs.nocomment,
-            admin: window.aomori.disqusjs.admin,
-            adminLabel: window.aomori.disqusjs.adminLabel,
-        })
-    }
+    
 })()

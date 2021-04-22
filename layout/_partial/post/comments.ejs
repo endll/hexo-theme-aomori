@@ -27,12 +27,20 @@
 </section>
 <% } %>
 
-<% if (config.aomori_valine && config.aomori_valine.enable){ %>
+<% if (config.aomori_valine && config.aomori_valine.enable){%>
 <section class="comments">
     <div id="valine-container"></div>
 </section>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<% } %>
+<script type="text/javascript">
+		new Valine({
+		el: '#valine-container',
+		appId: '<%= config.aomori_valine.appId %>',
+		appKey: '<%= config.aomori_valine.appKey %>',
+		avatar: 'hide',
+})
+</script>
+<%} %>
 
 <% if (config.aomori_remark42 && config.aomori_remark42.enable){ %>
 <div id="remark42"></div>
