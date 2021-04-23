@@ -105,6 +105,7 @@ var searchFunc = function (path, search_id, content_id) {
                                 "'>" +
                                 data_title +
                                 '</a></h1>'
+														console.log(data_url)
 														var date = data_url.substr(0,10)
                             str += title + '<p>' + match_content + '...</p>'+ '<p>' + date + '</p>'
                         }
@@ -126,10 +127,10 @@ var searchFunc = function (path, search_id, content_id) {
     $('#search').on('focusin', () => {
         addNewClass($('.search'), 'search-focus')
     })
-    // $('#search').on('focusout', () => {
-    // 		removeClass($('.search'), 'search-focus')
-    // 		$('.search-result').slideUp()
-    // })
+    $('#search').on('focusout', () => {
+    		removeClass($('.search'), 'search-focus')
+    		$('.search-result').slideUp()
+    })
 }
 
 searchFunc('/search.xml', 'search', 'search-ps')
