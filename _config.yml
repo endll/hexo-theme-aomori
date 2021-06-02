@@ -8,7 +8,7 @@ aomori_widgets:
 aomori_menu:
   主&nbsp;&nbsp;&nbsp;页: /
   文&nbsp;&nbsp;&nbsp;章: /archives
-  关&nbsp;&nbsp;&nbsp;于: /about
+  留&nbsp;&nbsp;&nbsp;言&nbsp;&nbsp;&nbsp;板: /about
 share: false
 local_search:
   enable: true
