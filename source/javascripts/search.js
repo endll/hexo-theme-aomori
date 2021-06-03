@@ -105,8 +105,7 @@ var searchFunc = function (path, search_id, content_id) {
                                 "'>" +
                                 data_title +
                                 '</a></h1>'
-														console.log(data_url)
-														var date = data_url.substr(0,10)
+							var date = data_url.substr(1,11)
                             str += title + '<p>' + match_content + '...</p>'+ '<p>' + date + '</p>'
                         }
                         str += '</span>'
